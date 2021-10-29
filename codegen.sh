@@ -13,7 +13,7 @@ for FILE in `find ../selling-partner-api-models/models -name "*.json"`; do
 	sed -i '' "s/GEMNAME/${API_NAME}/g" lib/${API_NAME}/config.json
 	sed -i '' "s/MODULENAME/${MODULE_NAME}/g" lib/${API_NAME}/config.json
 
-	swagger-codegen generate -i $FILE -l ruby -c lib/${API_NAME}/config.json -o lib/$API_NAME
+	openapi-generator generate -i $FILE -g ruby -c lib/${API_NAME}/config.json -o lib/$API_NAME
 
 	mv lib/${API_NAME}/lib/${API_NAME}.rb lib/
 	mv lib/${API_NAME}/lib/${API_NAME}/* lib/${API_NAME}
