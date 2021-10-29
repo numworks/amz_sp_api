@@ -8,6 +8,19 @@ Auto-generated documentation is nested here:  This is a handy way to see all the
 
 but https://developer-docs.amazon.com/sp-api is more comprehensive. 
 
+## NumWorks rebuild
+- brew install openapi-generator
+- cd ~/Sources && git clone git@github.com:amzn/selling-partner-api-models.git
+- Keep only th useful models (Feeds, Finances, Orders, Reports, Tokens)
+- Go through each model folder and remove the oldest version of the models when there are two (i.e. keep feeds_2021-06-30.json and reports_2021-06-30.json)
+- cd ~/Sources && git clone git@github.com:numworks/amz_sp_api.git
+- git checkout replace-typhoeus-with-faraday-2
+- ./codegen.sh
+
+Get files from submodels.
+For each, don't forget do keep only module AmzSpApi, not module AmzSpApi::AplusContentApiModel
+- Copy one of the lib/*/api_client.rb, api_error.rb and configuration.rb as lib/api_client.rb lib/api_error.rb and lib/configuration.rb. Make sure to keep the class retrieval from AmzSpApi (`klass = AmzSpApi.constants.map{|c| AmzSpApi.const_get(c)}.select{|sub| sub.kind_of?(Module)}.detect{|sub| sub.const_defined?(return_type)}.const_get(return_type)`)
+
 ## Installation
 
 Add the gem to your Gemfile as per https://rubygems.org/gems/amz_sp_api
