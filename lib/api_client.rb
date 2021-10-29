@@ -60,7 +60,7 @@ module AmzSpApi
           conn.request :multipart
           conn.request :url_encoded
         end
-        conn.adapter(Faraday.default_adapter)
+        conn.adapter(:excon)
       end
 
       begin
