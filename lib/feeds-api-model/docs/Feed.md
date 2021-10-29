@@ -1,6 +1,7 @@
 # AmzSpApi::FeedsApiModel::Feed
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **feed_id** | **String** | The identifier for the feed. This identifier is unique only in combination with a seller ID. | 
@@ -11,4 +12,20 @@ Name | Type | Description | Notes
 **processing_start_time** | **DateTime** | The date and time when feed processing started, in ISO 8601 date time format. | [optional] 
 **processing_end_time** | **DateTime** | The date and time when feed processing completed, in ISO 8601 date time format. | [optional] 
 **result_feed_document_id** | **String** | The identifier for the feed document. This identifier is unique only in combination with a seller ID. | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::FeedsApiModel'
+
+instance = AmzSpApi::FeedsApiModel::Feed.new(feed_id: null,
+                                 feed_type: null,
+                                 marketplace_ids: null,
+                                 created_time: null,
+                                 processing_status: null,
+                                 processing_start_time: null,
+                                 processing_end_time: null,
+                                 result_feed_document_id: null)
+```
+
 

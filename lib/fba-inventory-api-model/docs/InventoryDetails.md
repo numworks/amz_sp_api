@@ -1,6 +1,7 @@
 # AmzSpApi::FbaInventoryApiModel::InventoryDetails
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **fulfillable_quantity** | **Integer** | The item quantity that can be picked, packed, and shipped. | [optional] 
@@ -10,4 +11,19 @@ Name | Type | Description | Notes
 **reserved_quantity** | [**ReservedQuantity**](ReservedQuantity.md) |  | [optional] 
 **researching_quantity** | [**ResearchingQuantity**](ResearchingQuantity.md) |  | [optional] 
 **unfulfillable_quantity** | [**UnfulfillableQuantity**](UnfulfillableQuantity.md) |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::FbaInventoryApiModel'
+
+instance = AmzSpApi::FbaInventoryApiModel::InventoryDetails.new(fulfillable_quantity: null,
+                                 inbound_working_quantity: null,
+                                 inbound_shipped_quantity: null,
+                                 inbound_receiving_quantity: null,
+                                 reserved_quantity: null,
+                                 researching_quantity: null,
+                                 unfulfillable_quantity: null)
+```
+
 

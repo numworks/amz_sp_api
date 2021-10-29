@@ -1,6 +1,6 @@
 # AmzSpApi::NotificationsApiModel::NotificationsApi
 
-All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
+All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,10 @@ Method | HTTP request | Description
 [**get_subscription**](NotificationsApi.md#get_subscription) | **GET** /notifications/v1/subscriptions/{notificationType} | 
 [**get_subscription_by_id**](NotificationsApi.md#get_subscription_by_id) | **GET** /notifications/v1/subscriptions/{notificationType}/{subscriptionId} | 
 
-# **create_destination**
+
+
+## create_destination
+
 > CreateDestinationResponse create_destination(body)
 
 
@@ -21,13 +24,13 @@ Method | HTTP request | Description
 Creates a destination resource to receive notifications. The createDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'notifications-api-model'
 
 api_instance = AmzSpApi::NotificationsApiModel::NotificationsApi.new
 body = AmzSpApi::NotificationsApiModel::CreateDestinationRequest.new # CreateDestinationRequest | 
-
 
 begin
   result = api_instance.create_destination(body)
@@ -38,6 +41,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -53,30 +57,30 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json, Successful Response
+- **Content-Type**: application/json
+- **Accept**: application/json, Successful Response
 
 
+## create_subscription
 
-# **create_subscription**
-> CreateSubscriptionResponse create_subscription(bodynotification_type)
+> CreateSubscriptionResponse create_subscription(notification_type, body)
 
 
 
 Creates a subscription for the specified notification type to be delivered to the specified destination. Before you can subscribe, you must first create the destination by calling the createDestination operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'notifications-api-model'
 
 api_instance = AmzSpApi::NotificationsApiModel::NotificationsApi.new
+notification_type = 'notification_type_example' # String | The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
 body = AmzSpApi::NotificationsApiModel::CreateSubscriptionRequest.new # CreateSubscriptionRequest | 
-notification_type = 'notification_type_example' # String | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
-
 
 begin
-  result = api_instance.create_subscription(bodynotification_type)
+  result = api_instance.create_subscription(notification_type, body)
   p result
 rescue AmzSpApi::NotificationsApiModel::ApiError => e
   puts "Exception when calling NotificationsApi->create_subscription: #{e}"
@@ -85,10 +89,11 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **notification_type** | **String**| The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). | 
  **body** | [**CreateSubscriptionRequest**](CreateSubscriptionRequest.md)|  | 
- **notification_type** | **String**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. | 
 
 ### Return type
 
@@ -100,12 +105,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json, Successful Response
+- **Content-Type**: application/json
+- **Accept**: application/json, Successful Response
 
 
+## delete_destination
 
-# **delete_destination**
 > DeleteDestinationResponse delete_destination(destination_id)
 
 
@@ -113,13 +118,13 @@ No authorization required
 Deletes the destination that you specify. The deleteDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'notifications-api-model'
 
 api_instance = AmzSpApi::NotificationsApiModel::NotificationsApi.new
 destination_id = 'destination_id_example' # String | The identifier for the destination that you want to delete.
-
 
 begin
   result = api_instance.delete_destination(destination_id)
@@ -130,6 +135,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -145,12 +151,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, Successful Response
+- **Content-Type**: Not defined
+- **Accept**: application/json, Successful Response
 
 
+## delete_subscription_by_id
 
-# **delete_subscription_by_id**
 > DeleteSubscriptionByIdResponse delete_subscription_by_id(subscription_id, notification_type)
 
 
@@ -158,14 +164,14 @@ No authorization required
 Deletes the subscription indicated by the subscription identifier and notification type that you specify. The subscription identifier can be for any subscription associated with your application. After you successfully call this operation, notifications will stop being sent for the associated subscription. The deleteSubscriptionById API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'notifications-api-model'
 
 api_instance = AmzSpApi::NotificationsApiModel::NotificationsApi.new
 subscription_id = 'subscription_id_example' # String | The identifier for the subscription that you want to delete.
-notification_type = 'notification_type_example' # String | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
-
+notification_type = 'notification_type_example' # String | The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
 
 begin
   result = api_instance.delete_subscription_by_id(subscription_id, notification_type)
@@ -177,10 +183,11 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **String**| The identifier for the subscription that you want to delete. | 
- **notification_type** | **String**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. | 
+ **notification_type** | **String**| The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). | 
 
 ### Return type
 
@@ -192,12 +199,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, Successful Operation Response
+- **Content-Type**: Not defined
+- **Accept**: application/json, Successful Operation Response
 
 
+## get_destination
 
-# **get_destination**
 > GetDestinationResponse get_destination(destination_id)
 
 
@@ -205,13 +212,13 @@ No authorization required
 Returns information about the destination that you specify. The getDestination API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'notifications-api-model'
 
 api_instance = AmzSpApi::NotificationsApiModel::NotificationsApi.new
 destination_id = 'destination_id_example' # String | The identifier generated when you created the destination.
-
 
 begin
   result = api_instance.get_destination(destination_id)
@@ -222,6 +229,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -237,12 +245,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, Successful Response
+- **Content-Type**: Not defined
+- **Accept**: application/json, Successful Response
 
 
+## get_destinations
 
-# **get_destinations**
 > GetDestinationsResponse get_destinations
 
 
@@ -250,6 +258,7 @@ No authorization required
 Returns information about all destinations. The getDestinations API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'notifications-api-model'
@@ -265,6 +274,7 @@ end
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -277,12 +287,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, Successful Response
+- **Content-Type**: Not defined
+- **Accept**: application/json, Successful Response
 
 
+## get_subscription
 
-# **get_subscription**
 > GetSubscriptionResponse get_subscription(notification_type)
 
 
@@ -290,13 +300,13 @@ No authorization required
 Returns information about subscriptions of the specified notification type. You can use this API to get subscription information when you do not have a subscription identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'notifications-api-model'
 
 api_instance = AmzSpApi::NotificationsApiModel::NotificationsApi.new
-notification_type = 'notification_type_example' # String | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
-
+notification_type = 'notification_type_example' # String | The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
 
 begin
   result = api_instance.get_subscription(notification_type)
@@ -308,9 +318,10 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notification_type** | **String**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. | 
+ **notification_type** | **String**| The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). | 
 
 ### Return type
 
@@ -322,12 +333,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, Successful Response
+- **Content-Type**: Not defined
+- **Accept**: application/json, Successful Response
 
 
+## get_subscription_by_id
 
-# **get_subscription_by_id**
 > GetSubscriptionByIdResponse get_subscription_by_id(subscription_id, notification_type)
 
 
@@ -335,14 +346,14 @@ No authorization required
 Returns information about a subscription for the specified notification type. The getSubscriptionById API is grantless. For more information, see \"Grantless operations\" in the Selling Partner API Developer Guide.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 5 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'notifications-api-model'
 
 api_instance = AmzSpApi::NotificationsApiModel::NotificationsApi.new
 subscription_id = 'subscription_id_example' # String | The identifier for the subscription that you want to get.
-notification_type = 'notification_type_example' # String | The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide.
-
+notification_type = 'notification_type_example' # String | The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md).
 
 begin
   result = api_instance.get_subscription_by_id(subscription_id, notification_type)
@@ -354,10 +365,11 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **subscription_id** | **String**| The identifier for the subscription that you want to get. | 
- **notification_type** | **String**| The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. | 
+ **notification_type** | **String**| The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). | 
 
 ### Return type
 
@@ -369,8 +381,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, Successful Response
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json, Successful Response
 

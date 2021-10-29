@@ -1,6 +1,7 @@
 # AmzSpApi::FulfillmentOutboundApiModel::CreateReturnItem
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **seller_return_item_id** | **String** | An identifier assigned by the seller to the return item. | 
@@ -8,4 +9,17 @@ Name | Type | Description | Notes
 **amazon_shipment_id** | **String** | The identifier for the shipment that is associated with the return item. | 
 **return_reason_code** | **String** | The return reason code assigned to the return item by the seller. | 
 **return_comment** | **String** | An optional comment about the return item. | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::FulfillmentOutboundApiModel'
+
+instance = AmzSpApi::FulfillmentOutboundApiModel::CreateReturnItem.new(seller_return_item_id: null,
+                                 seller_fulfillment_order_item_id: null,
+                                 amazon_shipment_id: null,
+                                 return_reason_code: null,
+                                 return_comment: null)
+```
+
 

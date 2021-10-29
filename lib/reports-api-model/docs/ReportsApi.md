@@ -1,27 +1,31 @@
 # AmzSpApi::ReportsApiModel::ReportsApi
 
-All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
+All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**cancel_report**](ReportsApi.md#cancel_report) | **DELETE** /reports/2020-09-04/reports/{reportId} | 
-[**cancel_report_schedule**](ReportsApi.md#cancel_report_schedule) | **DELETE** /reports/2020-09-04/schedules/{reportScheduleId} | 
-[**create_report**](ReportsApi.md#create_report) | **POST** /reports/2020-09-04/reports | 
-[**create_report_schedule**](ReportsApi.md#create_report_schedule) | **POST** /reports/2020-09-04/schedules | 
-[**get_report**](ReportsApi.md#get_report) | **GET** /reports/2020-09-04/reports/{reportId} | 
-[**get_report_document**](ReportsApi.md#get_report_document) | **GET** /reports/2020-09-04/documents/{reportDocumentId} | 
-[**get_report_schedule**](ReportsApi.md#get_report_schedule) | **GET** /reports/2020-09-04/schedules/{reportScheduleId} | 
-[**get_report_schedules**](ReportsApi.md#get_report_schedules) | **GET** /reports/2020-09-04/schedules | 
-[**get_reports**](ReportsApi.md#get_reports) | **GET** /reports/2020-09-04/reports | 
+[**cancel_report**](ReportsApi.md#cancel_report) | **DELETE** /reports/2021-06-30/reports/{reportId} | 
+[**cancel_report_schedule**](ReportsApi.md#cancel_report_schedule) | **DELETE** /reports/2021-06-30/schedules/{reportScheduleId} | 
+[**create_report**](ReportsApi.md#create_report) | **POST** /reports/2021-06-30/reports | 
+[**create_report_schedule**](ReportsApi.md#create_report_schedule) | **POST** /reports/2021-06-30/schedules | 
+[**get_report**](ReportsApi.md#get_report) | **GET** /reports/2021-06-30/reports/{reportId} | 
+[**get_report_document**](ReportsApi.md#get_report_document) | **GET** /reports/2021-06-30/documents/{reportDocumentId} | 
+[**get_report_schedule**](ReportsApi.md#get_report_schedule) | **GET** /reports/2021-06-30/schedules/{reportScheduleId} | 
+[**get_report_schedules**](ReportsApi.md#get_report_schedules) | **GET** /reports/2021-06-30/schedules | 
+[**get_reports**](ReportsApi.md#get_reports) | **GET** /reports/2021-06-30/reports | 
 
-# **cancel_report**
-> CancelReportResponse cancel_report(report_id)
+
+
+## cancel_report
+
+> cancel_report(report_id)
 
 
 
 Cancels the report that you specify. Only reports with processingStatus=IN_QUEUE can be cancelled. Cancelled reports are returned in subsequent calls to the getReport and getReports operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'reports-api-model'
@@ -29,10 +33,8 @@ require 'reports-api-model'
 api_instance = AmzSpApi::ReportsApiModel::ReportsApi.new
 report_id = 'report_id_example' # String | The identifier for the report. This identifier is unique only in combination with a seller ID.
 
-
 begin
-  result = api_instance.cancel_report(report_id)
-  p result
+  api_instance.cancel_report(report_id)
 rescue AmzSpApi::ReportsApiModel::ApiError => e
   puts "Exception when calling ReportsApi->cancel_report: #{e}"
 end
@@ -40,13 +42,14 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **report_id** | **String**| The identifier for the report. This identifier is unique only in combination with a seller ID. | 
 
 ### Return type
 
-[**CancelReportResponse**](CancelReportResponse.md)
+nil (empty response body)
 
 ### Authorization
 
@@ -54,19 +57,20 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## cancel_report_schedule
 
-# **cancel_report_schedule**
-> CancelReportScheduleResponse cancel_report_schedule(report_schedule_id)
+> cancel_report_schedule(report_schedule_id)
 
 
 
 Cancels the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'reports-api-model'
@@ -74,10 +78,8 @@ require 'reports-api-model'
 api_instance = AmzSpApi::ReportsApiModel::ReportsApi.new
 report_schedule_id = 'report_schedule_id_example' # String | The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
 
-
 begin
-  result = api_instance.cancel_report_schedule(report_schedule_id)
-  p result
+  api_instance.cancel_report_schedule(report_schedule_id)
 rescue AmzSpApi::ReportsApiModel::ApiError => e
   puts "Exception when calling ReportsApi->cancel_report_schedule: #{e}"
 end
@@ -85,13 +87,14 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **report_schedule_id** | **String**| The identifier for the report schedule. This identifier is unique only in combination with a seller ID. | 
 
 ### Return type
 
-[**CancelReportScheduleResponse**](CancelReportScheduleResponse.md)
+nil (empty response body)
 
 ### Authorization
 
@@ -99,12 +102,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## create_report
 
-# **create_report**
 > CreateReportResponse create_report(body)
 
 
@@ -112,13 +115,13 @@ No authorization required
 Creates a report.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'reports-api-model'
 
 api_instance = AmzSpApi::ReportsApiModel::ReportsApi.new
 body = AmzSpApi::ReportsApiModel::CreateReportSpecification.new # CreateReportSpecification | 
-
 
 begin
   result = api_instance.create_report(body)
@@ -129,6 +132,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -144,12 +148,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## create_report_schedule
 
-# **create_report_schedule**
 > CreateReportScheduleResponse create_report_schedule(body)
 
 
@@ -157,13 +161,13 @@ No authorization required
 Creates a report schedule. If a report schedule with the same report type and marketplace IDs already exists, it will be cancelled and replaced with this one.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'reports-api-model'
 
 api_instance = AmzSpApi::ReportsApiModel::ReportsApi.new
 body = AmzSpApi::ReportsApiModel::CreateReportScheduleSpecification.new # CreateReportScheduleSpecification | 
-
 
 begin
   result = api_instance.create_report_schedule(body)
@@ -174,6 +178,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -189,26 +194,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## get_report
 
-# **get_report**
-> GetReportResponse get_report(report_id)
+> Report get_report(report_id)
 
 
 
 Returns report details (including the reportDocumentId, if available) for the report that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'reports-api-model'
 
 api_instance = AmzSpApi::ReportsApiModel::ReportsApi.new
 report_id = 'report_id_example' # String | The identifier for the report. This identifier is unique only in combination with a seller ID.
-
 
 begin
   result = api_instance.get_report(report_id)
@@ -220,13 +225,14 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **report_id** | **String**| The identifier for the report. This identifier is unique only in combination with a seller ID. | 
 
 ### Return type
 
-[**GetReportResponse**](GetReportResponse.md)
+[**Report**](Report.md)
 
 ### Authorization
 
@@ -234,26 +240,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_report_document
+
+> ReportDocument get_report_document(report_document_id)
 
 
 
-# **get_report_document**
-> GetReportDocumentResponse get_report_document(report_document_id)
-
-
-
-Returns the information required for retrieving a report document's contents. This includes a presigned URL for the report document as well as the information required to decrypt the document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
+Returns the information required for retrieving a report document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0167 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'reports-api-model'
 
 api_instance = AmzSpApi::ReportsApiModel::ReportsApi.new
 report_document_id = 'report_document_id_example' # String | The identifier for the report document.
-
 
 begin
   result = api_instance.get_report_document(report_document_id)
@@ -265,13 +271,14 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **report_document_id** | **String**| The identifier for the report document. | 
 
 ### Return type
 
-[**GetReportDocumentResponse**](GetReportDocumentResponse.md)
+[**ReportDocument**](ReportDocument.md)
 
 ### Authorization
 
@@ -279,26 +286,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_report_schedule
 
-# **get_report_schedule**
-> GetReportScheduleResponse get_report_schedule(report_schedule_id)
+> ReportSchedule get_report_schedule(report_schedule_id)
 
 
 
 Returns report schedule details for the report schedule that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'reports-api-model'
 
 api_instance = AmzSpApi::ReportsApiModel::ReportsApi.new
 report_schedule_id = 'report_schedule_id_example' # String | The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
-
 
 begin
   result = api_instance.get_report_schedule(report_schedule_id)
@@ -310,13 +317,14 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **report_schedule_id** | **String**| The identifier for the report schedule. This identifier is unique only in combination with a seller ID. | 
 
 ### Return type
 
-[**GetReportScheduleResponse**](GetReportScheduleResponse.md)
+[**ReportSchedule**](ReportSchedule.md)
 
 ### Authorization
 
@@ -324,26 +332,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_report_schedules
 
-# **get_report_schedules**
-> GetReportSchedulesResponse get_report_schedules(report_types)
+> ReportScheduleList get_report_schedules(report_types)
 
 
 
 Returns report schedule details that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'reports-api-model'
 
 api_instance = AmzSpApi::ReportsApiModel::ReportsApi.new
 report_types = ['report_types_example'] # Array<String> | A list of report types used to filter report schedules.
-
 
 begin
   result = api_instance.get_report_schedules(report_types)
@@ -355,13 +363,14 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **report_types** | [**Array&lt;String&gt;**](String.md)| A list of report types used to filter report schedules. | 
 
 ### Return type
 
-[**GetReportSchedulesResponse**](GetReportSchedulesResponse.md)
+[**ReportScheduleList**](ReportScheduleList.md)
 
 ### Authorization
 
@@ -369,12 +378,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_reports
 
-# **get_reports**
 > GetReportsResponse get_reports(opts)
 
 
@@ -382,12 +391,13 @@ No authorization required
 Returns report details for the reports that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'reports-api-model'
 
 api_instance = AmzSpApi::ReportsApiModel::ReportsApi.new
-opts = { 
+opts = {
   report_types: ['report_types_example'], # Array<String> | A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required.
   processing_statuses: ['processing_statuses_example'], # Array<String> | A list of processing statuses used to filter reports.
   marketplace_ids: ['marketplace_ids_example'], # Array<String> | A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify.
@@ -406,6 +416,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -427,8 +438,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

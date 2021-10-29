@@ -1,6 +1,6 @@
 # AmzSpApi::ServicesApiModel::ServiceApi
 
-All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
+All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,25 +11,28 @@ Method | HTTP request | Description
 [**get_service_jobs**](ServiceApi.md#get_service_jobs) | **GET** /service/v1/serviceJobs | 
 [**reschedule_appointment_for_service_job_by_service_job_id**](ServiceApi.md#reschedule_appointment_for_service_job_by_service_job_id) | **POST** /service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId} | 
 
-# **add_appointment_for_service_job_by_service_job_id**
-> SetAppointmentResponse add_appointment_for_service_job_by_service_job_id(bodyservice_job_id)
+
+
+## add_appointment_for_service_job_by_service_job_id
+
+> SetAppointmentResponse add_appointment_for_service_job_by_service_job_id(service_job_id, body)
 
 
 
 Adds an appointment to the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'services-api-model'
 
 api_instance = AmzSpApi::ServicesApiModel::ServiceApi.new
-body = AmzSpApi::ServicesApiModel::AddAppointmentRequest.new # AddAppointmentRequest | Add appointment operation input details.
 service_job_id = 'service_job_id_example' # String | An Amazon defined service job identifier.
-
+body = AmzSpApi::ServicesApiModel::AddAppointmentRequest.new # AddAppointmentRequest | Add appointment operation input details.
 
 begin
-  result = api_instance.add_appointment_for_service_job_by_service_job_id(bodyservice_job_id)
+  result = api_instance.add_appointment_for_service_job_by_service_job_id(service_job_id, body)
   p result
 rescue AmzSpApi::ServicesApiModel::ApiError => e
   puts "Exception when calling ServiceApi->add_appointment_for_service_job_by_service_job_id: #{e}"
@@ -38,10 +41,11 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AddAppointmentRequest**](AddAppointmentRequest.md)| Add appointment operation input details. | 
  **service_job_id** | **String**| An Amazon defined service job identifier. | 
+ **body** | [**AddAppointmentRequest**](AddAppointmentRequest.md)| Add appointment operation input details. | 
 
 ### Return type
 
@@ -53,12 +57,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## cancel_service_job_by_service_job_id
 
-# **cancel_service_job_by_service_job_id**
 > CancelServiceJobByServiceJobIdResponse cancel_service_job_by_service_job_id(service_job_id, cancellation_reason_code)
 
 
@@ -66,6 +70,7 @@ No authorization required
 Cancels the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'services-api-model'
@@ -73,7 +78,6 @@ require 'services-api-model'
 api_instance = AmzSpApi::ServicesApiModel::ServiceApi.new
 service_job_id = 'service_job_id_example' # String | An Amazon defined service job identifier.
 cancellation_reason_code = 'cancellation_reason_code_example' # String | A cancel reason code that specifies the reason for cancelling a service job.
-
 
 begin
   result = api_instance.cancel_service_job_by_service_job_id(service_job_id, cancellation_reason_code)
@@ -84,6 +88,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -100,12 +105,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## complete_service_job_by_service_job_id
 
-# **complete_service_job_by_service_job_id**
 > CompleteServiceJobByServiceJobIdResponse complete_service_job_by_service_job_id(service_job_id)
 
 
@@ -113,13 +118,13 @@ No authorization required
 Completes the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'services-api-model'
 
 api_instance = AmzSpApi::ServicesApiModel::ServiceApi.new
 service_job_id = 'service_job_id_example' # String | An Amazon defined service job identifier.
-
 
 begin
   result = api_instance.complete_service_job_by_service_job_id(service_job_id)
@@ -130,6 +135,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -145,12 +151,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_service_job_by_service_job_id
 
-# **get_service_job_by_service_job_id**
 > GetServiceJobByServiceJobIdResponse get_service_job_by_service_job_id(service_job_id)
 
 
@@ -158,13 +164,13 @@ No authorization required
 Gets service job details for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 20 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'services-api-model'
 
 api_instance = AmzSpApi::ServicesApiModel::ServiceApi.new
 service_job_id = 'service_job_id_example' # String | A service job identifier.
-
 
 begin
   result = api_instance.get_service_job_by_service_job_id(service_job_id)
@@ -175,6 +181,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -190,12 +197,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_service_jobs
 
-# **get_service_jobs**
 > GetServiceJobsResponse get_service_jobs(marketplace_ids, opts)
 
 
@@ -203,13 +210,14 @@ No authorization required
 Gets service job details for the specified filter query.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 10 | 40 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'services-api-model'
 
 api_instance = AmzSpApi::ServicesApiModel::ServiceApi.new
 marketplace_ids = ['marketplace_ids_example'] # Array<String> | Used to select jobs that were placed in the specified marketplaces. 
-opts = { 
+opts = {
   service_order_ids: ['service_order_ids_example'], # Array<String> | List of service order ids for the query you want to perform.Max values supported 20. 
   service_job_status: ['service_job_status_example'], # Array<String> | A list of one or more job status by which to filter the list of jobs.
   page_token: 'page_token_example', # String | String returned in the response of your previous request.
@@ -233,6 +241,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -260,31 +269,31 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## reschedule_appointment_for_service_job_by_service_job_id
 
-# **reschedule_appointment_for_service_job_by_service_job_id**
-> SetAppointmentResponse reschedule_appointment_for_service_job_by_service_job_id(bodyservice_job_idappointment_id)
+> SetAppointmentResponse reschedule_appointment_for_service_job_by_service_job_id(service_job_id, appointment_id, body)
 
 
 
 Reschedules an appointment for the service job indicated by the service job identifier you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 20 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'services-api-model'
 
 api_instance = AmzSpApi::ServicesApiModel::ServiceApi.new
-body = AmzSpApi::ServicesApiModel::RescheduleAppointmentRequest.new # RescheduleAppointmentRequest | Reschedule appointment operation input details.
 service_job_id = 'service_job_id_example' # String | An Amazon defined service job identifier.
 appointment_id = 'appointment_id_example' # String | An existing appointment identifier for the Service Job.
-
+body = AmzSpApi::ServicesApiModel::RescheduleAppointmentRequest.new # RescheduleAppointmentRequest | Reschedule appointment operation input details.
 
 begin
-  result = api_instance.reschedule_appointment_for_service_job_by_service_job_id(bodyservice_job_idappointment_id)
+  result = api_instance.reschedule_appointment_for_service_job_by_service_job_id(service_job_id, appointment_id, body)
   p result
 rescue AmzSpApi::ServicesApiModel::ApiError => e
   puts "Exception when calling ServiceApi->reschedule_appointment_for_service_job_by_service_job_id: #{e}"
@@ -293,11 +302,12 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RescheduleAppointmentRequest**](RescheduleAppointmentRequest.md)| Reschedule appointment operation input details. | 
  **service_job_id** | **String**| An Amazon defined service job identifier. | 
  **appointment_id** | **String**| An existing appointment identifier for the Service Job. | 
+ **body** | [**RescheduleAppointmentRequest**](RescheduleAppointmentRequest.md)| Reschedule appointment operation input details. | 
 
 ### Return type
 
@@ -309,8 +319,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

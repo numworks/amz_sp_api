@@ -1,10 +1,23 @@
 # AmzSpApi::FulfillmentInboundApiModel::Dimensions
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**length** | [**BigDecimalType**](BigDecimalType.md) |  | 
-**width** | [**BigDecimalType**](BigDecimalType.md) |  | 
-**height** | [**BigDecimalType**](BigDecimalType.md) |  | 
+**length** | **Float** |  | 
+**width** | **Float** |  | 
+**height** | **Float** |  | 
 **unit** | [**UnitOfMeasurement**](UnitOfMeasurement.md) |  | 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::FulfillmentInboundApiModel'
+
+instance = AmzSpApi::FulfillmentInboundApiModel::Dimensions.new(length: null,
+                                 width: null,
+                                 height: null,
+                                 unit: null)
+```
+
 

@@ -1,6 +1,7 @@
 # AmzSpApi::AplusContentApiModel::ContentModule
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content_module_type** | [**ContentModuleType**](ContentModuleType.md) |  | 
@@ -19,4 +20,28 @@ Name | Type | Description | Notes
 **standard_tech_specs** | [**StandardTechSpecsModule**](StandardTechSpecsModule.md) |  | [optional] 
 **standard_text** | [**StandardTextModule**](StandardTextModule.md) |  | [optional] 
 **standard_three_image_text** | [**StandardThreeImageTextModule**](StandardThreeImageTextModule.md) |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::AplusContentApiModel'
+
+instance = AmzSpApi::AplusContentApiModel::ContentModule.new(content_module_type: null,
+                                 standard_company_logo: null,
+                                 standard_comparison_table: null,
+                                 standard_four_image_text: null,
+                                 standard_four_image_text_quadrant: null,
+                                 standard_header_image_text: null,
+                                 standard_image_sidebar: null,
+                                 standard_image_text_overlay: null,
+                                 standard_multiple_image_text: null,
+                                 standard_product_description: null,
+                                 standard_single_image_highlights: null,
+                                 standard_single_image_specs_detail: null,
+                                 standard_single_side_image: null,
+                                 standard_tech_specs: null,
+                                 standard_text: null,
+                                 standard_three_image_text: null)
+```
+
 

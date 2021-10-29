@@ -1,6 +1,7 @@
 # AmzSpApi::FinancesApiModel::RemovalShipmentItem
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **removal_shipment_item_id** | **String** | An identifier for an item in a removal shipment. | [optional] 
@@ -11,4 +12,20 @@ Name | Type | Description | Notes
 **fee_amount** | [**Currency**](Currency.md) |  | [optional] 
 **tax_amount** | [**Currency**](Currency.md) |  | [optional] 
 **tax_withheld** | [**Currency**](Currency.md) |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::FinancesApiModel'
+
+instance = AmzSpApi::FinancesApiModel::RemovalShipmentItem.new(removal_shipment_item_id: null,
+                                 tax_collection_model: null,
+                                 fulfillment_network_sku: null,
+                                 quantity: null,
+                                 revenue: null,
+                                 fee_amount: null,
+                                 tax_amount: null,
+                                 tax_withheld: null)
+```
+
 

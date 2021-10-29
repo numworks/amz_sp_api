@@ -1,6 +1,7 @@
 # AmzSpApi::ReportsApiModel::Report
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **marketplace_ids** | **Array&lt;String&gt;** | A list of marketplace identifiers for the report. | [optional] 
@@ -13,5 +14,24 @@ Name | Type | Description | Notes
 **processing_status** | **String** | The processing status of the report. | 
 **processing_start_time** | **DateTime** | The date and time when the report processing started, in ISO 8601 date time format. | [optional] 
 **processing_end_time** | **DateTime** | The date and time when the report processing completed, in ISO 8601 date time format. | [optional] 
-**report_document_id** | **String** | The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve and decrypt the report document&#x27;s contents. | [optional] 
+**report_document_id** | **String** | The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve the report document&#39;s contents. | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::ReportsApiModel'
+
+instance = AmzSpApi::ReportsApiModel::Report.new(marketplace_ids: null,
+                                 report_id: null,
+                                 report_type: null,
+                                 data_start_time: null,
+                                 data_end_time: null,
+                                 report_schedule_id: null,
+                                 created_time: null,
+                                 processing_status: null,
+                                 processing_start_time: null,
+                                 processing_end_time: null,
+                                 report_document_id: null)
+```
+
 

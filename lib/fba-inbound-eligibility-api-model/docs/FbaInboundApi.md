@@ -1,12 +1,15 @@
 # AmzSpApi::FbaInboundEligibilityApiModel::FbaInboundApi
 
-All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
+All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_item_eligibility_preview**](FbaInboundApi.md#get_item_eligibility_preview) | **GET** /fba/inbound/v1/eligibility/itemPreview | 
 
-# **get_item_eligibility_preview**
+
+
+## get_item_eligibility_preview
+
 > GetItemEligibilityPreviewResponse get_item_eligibility_preview(asin, program, opts)
 
 
@@ -14,6 +17,7 @@ Method | HTTP request | Description
 This operation gets an eligibility preview for an item that you specify. You can specify the type of eligibility preview that you want (INBOUND or COMMINGLING). For INBOUND previews, you can specify the marketplace in which you want to determine the item's eligibility.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'fba-inbound-eligibility-api-model'
@@ -21,7 +25,7 @@ require 'fba-inbound-eligibility-api-model'
 api_instance = AmzSpApi::FbaInboundEligibilityApiModel::FbaInboundApi.new
 asin = 'asin_example' # String | The ASIN of the item for which you want an eligibility preview.
 program = 'program_example' # String | The program that you want to check eligibility against.
-opts = { 
+opts = {
   marketplace_ids: ['marketplace_ids_example'] # Array<String> | The identifier for the marketplace in which you want to determine eligibility. Required only when program=INBOUND.
 }
 
@@ -34,6 +38,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -51,8 +56,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, ItemEligibilityPreview
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json, ItemEligibilityPreview
 

@@ -1,6 +1,6 @@
 # AmzSpApi::FeedsApiModel::FeedsApi
 
-All URIs are relative to *https://sellingpartnerapi-na.amazon.com/*
+All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,10 @@ Method | HTTP request | Description
 [**get_feed_document**](FeedsApi.md#get_feed_document) | **GET** /feeds/2020-09-04/documents/{feedDocumentId} | 
 [**get_feeds**](FeedsApi.md#get_feeds) | **GET** /feeds/2020-09-04/feeds | 
 
-# **cancel_feed**
+
+
+## cancel_feed
+
 > CancelFeedResponse cancel_feed(feed_id)
 
 
@@ -19,13 +22,13 @@ Method | HTTP request | Description
 Cancels the feed that you specify. Only feeds with processingStatus=IN_QUEUE can be cancelled. Cancelled feeds are returned in subsequent calls to the getFeed and getFeeds operations.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'feeds-api-model'
 
 api_instance = AmzSpApi::FeedsApiModel::FeedsApi.new
 feed_id = 'feed_id_example' # String | The identifier for the feed. This identifier is unique only in combination with a seller ID.
-
 
 begin
   result = api_instance.cancel_feed(feed_id)
@@ -36,6 +39,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -51,12 +55,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## create_feed
 
-# **create_feed**
 > CreateFeedResponse create_feed(body)
 
 
@@ -64,13 +68,13 @@ No authorization required
 Creates a feed. Encrypt and upload the contents of the feed document before calling this operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'feeds-api-model'
 
 api_instance = AmzSpApi::FeedsApiModel::FeedsApi.new
 body = AmzSpApi::FeedsApiModel::CreateFeedSpecification.new # CreateFeedSpecification | 
-
 
 begin
   result = api_instance.create_feed(body)
@@ -81,6 +85,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -96,12 +101,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## create_feed_document
 
-# **create_feed_document**
 > CreateFeedDocumentResponse create_feed_document(body)
 
 
@@ -109,13 +114,13 @@ No authorization required
 Creates a feed document for the feed type that you specify. This operation returns encryption details for encrypting the contents of the document, as well as a presigned URL for uploading the encrypted feed document contents. It also returns a feedDocumentId value that you can pass in with a subsequent call to the createFeed operation.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0083 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'feeds-api-model'
 
 api_instance = AmzSpApi::FeedsApiModel::FeedsApi.new
 body = AmzSpApi::FeedsApiModel::CreateFeedDocumentSpecification.new # CreateFeedDocumentSpecification | 
-
 
 begin
   result = api_instance.create_feed_document(body)
@@ -126,6 +131,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -141,12 +147,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## get_feed
 
-# **get_feed**
 > GetFeedResponse get_feed(feed_id)
 
 
@@ -154,13 +160,13 @@ No authorization required
 Returns feed details (including the resultDocumentId, if available) for the feed that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 2.0 | 15 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'feeds-api-model'
 
 api_instance = AmzSpApi::FeedsApiModel::FeedsApi.new
 feed_id = 'feed_id_example' # String | The identifier for the feed. This identifier is unique only in combination with a seller ID.
-
 
 begin
   result = api_instance.get_feed(feed_id)
@@ -171,6 +177,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -186,12 +193,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_feed_document
 
-# **get_feed_document**
 > GetFeedDocumentResponse get_feed_document(feed_document_id)
 
 
@@ -199,13 +206,13 @@ No authorization required
 Returns the information required for retrieving a feed document's contents. This includes a presigned URL for the feed document as well as the information required to decrypt the document's contents.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'feeds-api-model'
 
 api_instance = AmzSpApi::FeedsApiModel::FeedsApi.new
 feed_document_id = 'feed_document_id_example' # String | The identifier of the feed document.
-
 
 begin
   result = api_instance.get_feed_document(feed_document_id)
@@ -216,6 +223,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -231,12 +239,12 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_feeds
 
-# **get_feeds**
 > GetFeedsResponse get_feeds(opts)
 
 
@@ -244,12 +252,13 @@ No authorization required
 Returns feed details for the feeds that match the filters that you specify.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 0.0222 | 10 |  For more information, see \"Usage Plans and Rate Limits\" in the Selling Partner API documentation.
 
 ### Example
+
 ```ruby
 # load the gem
 require 'feeds-api-model'
 
 api_instance = AmzSpApi::FeedsApiModel::FeedsApi.new
-opts = { 
+opts = {
   feed_types: ['feed_types_example'], # Array<String> | A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required.
   marketplace_ids: ['marketplace_ids_example'], # Array<String> | A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify.
   page_size: 10, # Integer | The maximum number of feeds to return in a single call.
@@ -268,6 +277,7 @@ end
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -289,8 +299,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

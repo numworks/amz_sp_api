@@ -1,14 +1,31 @@
 # AmzSpApi::ProductFeesApiModel::FeesEstimateIdentifier
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **marketplace_id** | **String** | A marketplace identifier. | [optional] 
 **seller_id** | **String** | The seller identifier. | [optional] 
 **id_type** | **String** | The type of item identifier specified. | [optional] 
 **id_value** | **String** | The item identifier. | [optional] 
-**is_amazon_fulfilled** | **BOOLEAN** | When true, the offer is fulfilled by Amazon. | [optional] 
+**is_amazon_fulfilled** | **Boolean** | When true, the offer is fulfilled by Amazon. | [optional] 
 **price_to_estimate_fees** | [**PriceToEstimateFees**](PriceToEstimateFees.md) |  | [optional] 
 **seller_input_identifier** | **String** | A unique identifier provided by the caller to track this request. | [optional] 
 **optional_fulfillment_program** | [**OptionalFulfillmentProgram**](OptionalFulfillmentProgram.md) |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::ProductFeesApiModel'
+
+instance = AmzSpApi::ProductFeesApiModel::FeesEstimateIdentifier.new(marketplace_id: null,
+                                 seller_id: null,
+                                 id_type: null,
+                                 id_value: null,
+                                 is_amazon_fulfilled: null,
+                                 price_to_estimate_fees: null,
+                                 seller_input_identifier: null,
+                                 optional_fulfillment_program: null)
+```
+
 

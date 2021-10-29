@@ -1,7 +1,16 @@
 # AmzSpApi::AplusContentApiModel::PostContentDocumentAsinRelationsResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**warnings** | [**MessageSet**](MessageSet.md) |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::AplusContentApiModel'
+
+instance = AmzSpApi::AplusContentApiModel::PostContentDocumentAsinRelationsResponse.new()
+```
+
 

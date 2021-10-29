@@ -1,6 +1,7 @@
 # AmzSpApi::FinancesApiModel::FinancialEventGroup
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **financial_event_group_id** | **String** | A unique identifier for the financial event group. | [optional] 
@@ -8,10 +9,29 @@ Name | Type | Description | Notes
 **fund_transfer_status** | **String** | The status of the fund transfer. | [optional] 
 **original_total** | [**Currency**](Currency.md) |  | [optional] 
 **converted_total** | [**Currency**](Currency.md) |  | [optional] 
-**fund_transfer_date** | **Date** |  | [optional] 
+**fund_transfer_date** | **DateTime** |  | [optional] 
 **trace_id** | **String** | The trace identifier used by sellers to look up transactions externally. | [optional] 
 **account_tail** | **String** | The account tail of the payment instrument. | [optional] 
 **beginning_balance** | [**Currency**](Currency.md) |  | [optional] 
-**financial_event_group_start** | **Date** |  | [optional] 
-**financial_event_group_end** | **Date** |  | [optional] 
+**financial_event_group_start** | **DateTime** |  | [optional] 
+**financial_event_group_end** | **DateTime** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::FinancesApiModel'
+
+instance = AmzSpApi::FinancesApiModel::FinancialEventGroup.new(financial_event_group_id: null,
+                                 processing_status: null,
+                                 fund_transfer_status: null,
+                                 original_total: null,
+                                 converted_total: null,
+                                 fund_transfer_date: null,
+                                 trace_id: null,
+                                 account_tail: null,
+                                 beginning_balance: null,
+                                 financial_event_group_start: null,
+                                 financial_event_group_end: null)
+```
+
 

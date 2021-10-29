@@ -1,8 +1,19 @@
 # AmzSpApi::MerchantFulfillmentApiModel::GetAdditionalSellerInputsResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payload** | [**GetAdditionalSellerInputsResult**](GetAdditionalSellerInputsResult.md) |  | [optional] 
-**errors** | [**ErrorList**](ErrorList.md) |  | [optional] 
+**errors** | [**Array&lt;Error&gt;**](Error.md) | A list of error responses returned when a request is unsuccessful. | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::MerchantFulfillmentApiModel'
+
+instance = AmzSpApi::MerchantFulfillmentApiModel::GetAdditionalSellerInputsResponse.new(payload: null,
+                                 errors: null)
+```
+
 

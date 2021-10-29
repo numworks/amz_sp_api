@@ -1,9 +1,21 @@
 # AmzSpApi::FulfillmentInboundApiModel::PartneredEstimate
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | [**Amount**](Amount.md) |  | 
-**confirm_deadline** | [**TimeStampStringType**](TimeStampStringType.md) |  | [optional] 
-**void_deadline** | [**TimeStampStringType**](TimeStampStringType.md) |  | [optional] 
+**confirm_deadline** | **DateTime** |  | [optional] 
+**void_deadline** | **DateTime** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::FulfillmentInboundApiModel'
+
+instance = AmzSpApi::FulfillmentInboundApiModel::PartneredEstimate.new(amount: null,
+                                 confirm_deadline: null,
+                                 void_deadline: null)
+```
+
 

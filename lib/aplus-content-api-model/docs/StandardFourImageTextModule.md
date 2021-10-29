@@ -1,6 +1,7 @@
 # AmzSpApi::AplusContentApiModel::StandardFourImageTextModule
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **headline** | [**TextComponent**](TextComponent.md) |  | [optional] 
@@ -8,4 +9,17 @@ Name | Type | Description | Notes
 **block2** | [**StandardImageTextBlock**](StandardImageTextBlock.md) |  | [optional] 
 **block3** | [**StandardImageTextBlock**](StandardImageTextBlock.md) |  | [optional] 
 **block4** | [**StandardImageTextBlock**](StandardImageTextBlock.md) |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::AplusContentApiModel'
+
+instance = AmzSpApi::AplusContentApiModel::StandardFourImageTextModule.new(headline: null,
+                                 block1: null,
+                                 block2: null,
+                                 block3: null,
+                                 block4: null)
+```
+
 

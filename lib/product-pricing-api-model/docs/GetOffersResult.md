@@ -1,6 +1,7 @@
 # AmzSpApi::ProductPricingApiModel::GetOffersResult
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **marketplace_id** | **String** | A marketplace identifier. | 
@@ -10,5 +11,21 @@ Name | Type | Description | Notes
 **status** | **String** | The status of the operation. | 
 **identifier** | [**ItemIdentifier**](ItemIdentifier.md) |  | 
 **summary** | [**Summary**](Summary.md) |  | 
-**offers** | [**OfferDetailList**](OfferDetailList.md) |  | 
+**offers** | [**Array&lt;OfferDetail&gt;**](OfferDetail.md) |  | 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::ProductPricingApiModel'
+
+instance = AmzSpApi::ProductPricingApiModel::GetOffersResult.new(marketplace_id: null,
+                                 asin: null,
+                                 sku: null,
+                                 item_condition: null,
+                                 status: null,
+                                 identifier: null,
+                                 summary: null,
+                                 offers: null)
+```
+
 

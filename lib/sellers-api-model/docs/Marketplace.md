@@ -1,6 +1,7 @@
 # AmzSpApi::SellersApiModel::Marketplace
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | The encrypted marketplace value. | 
@@ -9,4 +10,18 @@ Name | Type | Description | Notes
 **default_currency_code** | **String** | The ISO 4217 format currency code of the marketplace. | 
 **default_language_code** | **String** | The ISO 639-1 format language code of the marketplace. | 
 **domain_name** | **String** | The domain name of the marketplace. | 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::SellersApiModel'
+
+instance = AmzSpApi::SellersApiModel::Marketplace.new(id: null,
+                                 name: null,
+                                 country_code: null,
+                                 default_currency_code: null,
+                                 default_language_code: null,
+                                 domain_name: null)
+```
+
 

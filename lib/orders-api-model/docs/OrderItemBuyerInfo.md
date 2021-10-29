@@ -1,6 +1,7 @@
 # AmzSpApi::OrdersApiModel::OrderItemBuyerInfo
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **order_item_id** | **String** | An Amazon-defined order item identifier. | 
@@ -9,4 +10,18 @@ Name | Type | Description | Notes
 **gift_wrap_tax** | [**Money**](Money.md) |  | [optional] 
 **gift_message_text** | **String** | A gift message provided by the buyer. | [optional] 
 **gift_wrap_level** | **String** | The gift wrap level specified by the buyer. | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::OrdersApiModel'
+
+instance = AmzSpApi::OrdersApiModel::OrderItemBuyerInfo.new(order_item_id: null,
+                                 buyer_customized_info: null,
+                                 gift_wrap_price: null,
+                                 gift_wrap_tax: null,
+                                 gift_message_text: null,
+                                 gift_wrap_level: null)
+```
+
 

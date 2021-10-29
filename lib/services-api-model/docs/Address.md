@@ -1,6 +1,7 @@
 # AmzSpApi::ServicesApiModel::Address
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The name of the person, business, or institution. | 
@@ -14,4 +15,23 @@ Name | Type | Description | Notes
 **postal_code** | **String** | The postal code. This can contain letters, digits, spaces, and/or punctuation. | [optional] 
 **country_code** | **String** | The two digit country code, in ISO 3166-1 alpha-2 format. | [optional] 
 **phone** | **String** | The phone number. | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::ServicesApiModel'
+
+instance = AmzSpApi::ServicesApiModel::Address.new(name: null,
+                                 address_line1: null,
+                                 address_line2: null,
+                                 address_line3: null,
+                                 city: null,
+                                 county: null,
+                                 district: null,
+                                 state_or_region: null,
+                                 postal_code: null,
+                                 country_code: null,
+                                 phone: null)
+```
+
 

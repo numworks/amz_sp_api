@@ -1,28 +1,69 @@
 # AmzSpApi::FinancesApiModel::FinancialEvents
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**shipment_event_list** | [**ShipmentEventList**](ShipmentEventList.md) |  | [optional] 
-**refund_event_list** | [**ShipmentEventList**](ShipmentEventList.md) |  | [optional] 
-**guarantee_claim_event_list** | [**ShipmentEventList**](ShipmentEventList.md) |  | [optional] 
-**chargeback_event_list** | [**ShipmentEventList**](ShipmentEventList.md) |  | [optional] 
-**pay_with_amazon_event_list** | [**PayWithAmazonEventList**](PayWithAmazonEventList.md) |  | [optional] 
-**service_provider_credit_event_list** | [**SolutionProviderCreditEventList**](SolutionProviderCreditEventList.md) |  | [optional] 
-**retrocharge_event_list** | [**RetrochargeEventList**](RetrochargeEventList.md) |  | [optional] 
-**rental_transaction_event_list** | [**RentalTransactionEventList**](RentalTransactionEventList.md) |  | [optional] 
-**product_ads_payment_event_list** | [**ProductAdsPaymentEventList**](ProductAdsPaymentEventList.md) |  | [optional] 
-**service_fee_event_list** | [**ServiceFeeEventList**](ServiceFeeEventList.md) |  | [optional] 
-**seller_deal_payment_event_list** | [**SellerDealPaymentEventList**](SellerDealPaymentEventList.md) |  | [optional] 
-**debt_recovery_event_list** | [**DebtRecoveryEventList**](DebtRecoveryEventList.md) |  | [optional] 
-**loan_servicing_event_list** | [**LoanServicingEventList**](LoanServicingEventList.md) |  | [optional] 
-**adjustment_event_list** | [**AdjustmentEventList**](AdjustmentEventList.md) |  | [optional] 
-**safet_reimbursement_event_list** | [**SAFETReimbursementEventList**](SAFETReimbursementEventList.md) |  | [optional] 
-**seller_review_enrollment_payment_event_list** | [**SellerReviewEnrollmentPaymentEventList**](SellerReviewEnrollmentPaymentEventList.md) |  | [optional] 
-**fba_liquidation_event_list** | [**FBALiquidationEventList**](FBALiquidationEventList.md) |  | [optional] 
-**coupon_payment_event_list** | [**CouponPaymentEventList**](CouponPaymentEventList.md) |  | [optional] 
-**imaging_services_fee_event_list** | [**ImagingServicesFeeEventList**](ImagingServicesFeeEventList.md) |  | [optional] 
-**network_commingling_transaction_event_list** | [**NetworkComminglingTransactionEventList**](NetworkComminglingTransactionEventList.md) |  | [optional] 
-**affordability_expense_event_list** | [**AffordabilityExpenseEventList**](AffordabilityExpenseEventList.md) |  | [optional] 
-**affordability_expense_reversal_event_list** | [**AffordabilityExpenseEventList**](AffordabilityExpenseEventList.md) |  | [optional] 
+**shipment_event_list** | [**Array&lt;ShipmentEvent&gt;**](ShipmentEvent.md) | A list of shipment event information. | [optional] 
+**refund_event_list** | [**Array&lt;ShipmentEvent&gt;**](ShipmentEvent.md) | A list of shipment event information. | [optional] 
+**guarantee_claim_event_list** | [**Array&lt;ShipmentEvent&gt;**](ShipmentEvent.md) | A list of shipment event information. | [optional] 
+**chargeback_event_list** | [**Array&lt;ShipmentEvent&gt;**](ShipmentEvent.md) | A list of shipment event information. | [optional] 
+**pay_with_amazon_event_list** | [**Array&lt;PayWithAmazonEvent&gt;**](PayWithAmazonEvent.md) | A list of events related to the seller&#39;s Pay with Amazon account. | [optional] 
+**service_provider_credit_event_list** | [**Array&lt;SolutionProviderCreditEvent&gt;**](SolutionProviderCreditEvent.md) | A list of information about solution provider credits. | [optional] 
+**retrocharge_event_list** | [**Array&lt;RetrochargeEvent&gt;**](RetrochargeEvent.md) | A list of information about Retrocharge or RetrochargeReversal events. | [optional] 
+**rental_transaction_event_list** | [**Array&lt;RentalTransactionEvent&gt;**](RentalTransactionEvent.md) | A list of rental transaction event information. | [optional] 
+**product_ads_payment_event_list** | [**Array&lt;ProductAdsPaymentEvent&gt;**](ProductAdsPaymentEvent.md) | A list of sponsored products payment events. | [optional] 
+**service_fee_event_list** | [**Array&lt;ServiceFeeEvent&gt;**](ServiceFeeEvent.md) | A list of information about service fee events. | [optional] 
+**seller_deal_payment_event_list** | [**Array&lt;SellerDealPaymentEvent&gt;**](SellerDealPaymentEvent.md) | A list of payment events for deal-related fees. | [optional] 
+**debt_recovery_event_list** | [**Array&lt;DebtRecoveryEvent&gt;**](DebtRecoveryEvent.md) | A list of debt recovery event information. | [optional] 
+**loan_servicing_event_list** | [**Array&lt;LoanServicingEvent&gt;**](LoanServicingEvent.md) | A list of loan servicing events. | [optional] 
+**adjustment_event_list** | [**Array&lt;AdjustmentEvent&gt;**](AdjustmentEvent.md) | A list of adjustment event information for the seller&#39;s account. | [optional] 
+**safet_reimbursement_event_list** | [**Array&lt;SAFETReimbursementEvent&gt;**](SAFETReimbursementEvent.md) | A list of SAFETReimbursementEvents. | [optional] 
+**seller_review_enrollment_payment_event_list** | [**Array&lt;SellerReviewEnrollmentPaymentEvent&gt;**](SellerReviewEnrollmentPaymentEvent.md) | A list of information about fee events for the Early Reviewer Program. | [optional] 
+**fba_liquidation_event_list** | [**Array&lt;FBALiquidationEvent&gt;**](FBALiquidationEvent.md) | A list of FBA inventory liquidation payment events. | [optional] 
+**coupon_payment_event_list** | [**Array&lt;CouponPaymentEvent&gt;**](CouponPaymentEvent.md) | A list of coupon payment event information. | [optional] 
+**imaging_services_fee_event_list** | [**Array&lt;ImagingServicesFeeEvent&gt;**](ImagingServicesFeeEvent.md) | A list of fee events related to Amazon Imaging services. | [optional] 
+**network_commingling_transaction_event_list** | [**Array&lt;NetworkComminglingTransactionEvent&gt;**](NetworkComminglingTransactionEvent.md) | A list of network commingling transaction events. | [optional] 
+**affordability_expense_event_list** | [**Array&lt;AffordabilityExpenseEvent&gt;**](AffordabilityExpenseEvent.md) | A list of expense information related to an affordability promotion. | [optional] 
+**affordability_expense_reversal_event_list** | [**Array&lt;AffordabilityExpenseEvent&gt;**](AffordabilityExpenseEvent.md) | A list of expense information related to an affordability promotion. | [optional] 
+**trial_shipment_event_list** | [**Array&lt;TrialShipmentEvent&gt;**](TrialShipmentEvent.md) | A list of information about trial shipment financial events. | [optional] 
+**shipment_settle_event_list** | [**Array&lt;ShipmentEvent&gt;**](ShipmentEvent.md) | A list of information about shipment settle financial events. | [optional] 
+**tax_withholding_event_list** | [**Array&lt;TaxWithholdingEvent&gt;**](TaxWithholdingEvent.md) | List of TaxWithholding events. | [optional] 
+**removal_shipment_event_list** | [**Array&lt;RemovalShipmentEvent&gt;**](RemovalShipmentEvent.md) | A list of removal shipment event information. | [optional] 
+**removal_shipment_adjustment_event_list** | [**Array&lt;RemovalShipmentAdjustmentEvent&gt;**](RemovalShipmentAdjustmentEvent.md) | A comma-delimited list of Removal shipmentAdjustment details for FBA inventory. | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::FinancesApiModel'
+
+instance = AmzSpApi::FinancesApiModel::FinancialEvents.new(shipment_event_list: null,
+                                 refund_event_list: null,
+                                 guarantee_claim_event_list: null,
+                                 chargeback_event_list: null,
+                                 pay_with_amazon_event_list: null,
+                                 service_provider_credit_event_list: null,
+                                 retrocharge_event_list: null,
+                                 rental_transaction_event_list: null,
+                                 product_ads_payment_event_list: null,
+                                 service_fee_event_list: null,
+                                 seller_deal_payment_event_list: null,
+                                 debt_recovery_event_list: null,
+                                 loan_servicing_event_list: null,
+                                 adjustment_event_list: null,
+                                 safet_reimbursement_event_list: null,
+                                 seller_review_enrollment_payment_event_list: null,
+                                 fba_liquidation_event_list: null,
+                                 coupon_payment_event_list: null,
+                                 imaging_services_fee_event_list: null,
+                                 network_commingling_transaction_event_list: null,
+                                 affordability_expense_event_list: null,
+                                 affordability_expense_reversal_event_list: null,
+                                 trial_shipment_event_list: null,
+                                 shipment_settle_event_list: null,
+                                 tax_withholding_event_list: null,
+                                 removal_shipment_event_list: null,
+                                 removal_shipment_adjustment_event_list: null)
+```
+
 

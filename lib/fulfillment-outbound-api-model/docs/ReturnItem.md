@@ -1,6 +1,7 @@
 # AmzSpApi::FulfillmentOutboundApiModel::ReturnItem
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **seller_return_item_id** | **String** | An identifier assigned by the seller to the return item. | 
@@ -10,8 +11,27 @@ Name | Type | Description | Notes
 **return_comment** | **String** | An optional comment about the return item. | [optional] 
 **amazon_return_reason_code** | **String** | The return reason code that the Amazon fulfillment center assigned to the return item. | [optional] 
 **status** | [**FulfillmentReturnItemStatus**](FulfillmentReturnItemStatus.md) |  | 
-**status_changed_date** | [**Timestamp**](Timestamp.md) |  | 
+**status_changed_date** | **DateTime** |  | 
 **return_authorization_id** | **String** | Identifies the return authorization used to return this item. See ReturnAuthorization. | [optional] 
 **return_received_condition** | [**ReturnItemDisposition**](ReturnItemDisposition.md) |  | [optional] 
 **fulfillment_center_id** | **String** | The identifier for the Amazon fulfillment center that processed the return item. | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::FulfillmentOutboundApiModel'
+
+instance = AmzSpApi::FulfillmentOutboundApiModel::ReturnItem.new(seller_return_item_id: null,
+                                 seller_fulfillment_order_item_id: null,
+                                 amazon_shipment_id: null,
+                                 seller_return_reason_code: null,
+                                 return_comment: null,
+                                 amazon_return_reason_code: null,
+                                 status: null,
+                                 status_changed_date: null,
+                                 return_authorization_id: null,
+                                 return_received_condition: null,
+                                 fulfillment_center_id: null)
+```
+
 

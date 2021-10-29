@@ -1,6 +1,7 @@
 # AmzSpApi::ServicesApiModel::Poa
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **appointment_time** | [**AppointmentTime**](AppointmentTime.md) |  | [optional] 
@@ -8,4 +9,17 @@ Name | Type | Description | Notes
 **uploading_technician** | **String** | The identifier of the technician who uploaded the POA. | [optional] 
 **upload_time** | **DateTime** | The date and time when the POA was uploaded, in ISO 8601 format. | [optional] 
 **poa_type** | **String** | The type of POA uploaded. | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::ServicesApiModel'
+
+instance = AmzSpApi::ServicesApiModel::Poa.new(appointment_time: null,
+                                 technicians: null,
+                                 uploading_technician: null,
+                                 upload_time: null,
+                                 poa_type: null)
+```
+
 

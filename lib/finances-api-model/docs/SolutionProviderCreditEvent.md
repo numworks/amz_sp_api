@@ -1,6 +1,7 @@
 # AmzSpApi::FinancesApiModel::SolutionProviderCreditEvent
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **provider_transaction_type** | **String** | The transaction type. | [optional] 
@@ -12,5 +13,23 @@ Name | Type | Description | Notes
 **provider_id** | **String** | The Amazon-defined identifier of the solution provider. | [optional] 
 **provider_store_name** | **String** | The store name where the payment event occurred. | [optional] 
 **transaction_amount** | [**Currency**](Currency.md) |  | [optional] 
-**transaction_creation_date** | **Date** |  | [optional] 
+**transaction_creation_date** | **DateTime** |  | [optional] 
+
+## Code Sample
+
+```ruby
+require 'AmzSpApi::FinancesApiModel'
+
+instance = AmzSpApi::FinancesApiModel::SolutionProviderCreditEvent.new(provider_transaction_type: null,
+                                 seller_order_id: null,
+                                 marketplace_id: null,
+                                 marketplace_country_code: null,
+                                 seller_id: null,
+                                 seller_store_name: null,
+                                 provider_id: null,
+                                 provider_store_name: null,
+                                 transaction_amount: null,
+                                 transaction_creation_date: null)
+```
+
 
