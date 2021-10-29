@@ -128,7 +128,7 @@ module AmzSpApi
     def initialize
       @scheme = 'https'
       @host = 'sellingpartnerapi-na.amazon.com'
-      @base_path = 'https://sellingpartnerapi-na.amazon.com/'
+      @base_path = ''
       @api_key = {}
       @api_key_prefix = {}
       @timeout = 0
