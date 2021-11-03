@@ -21,7 +21,7 @@ module AmzSpApi
 
       # Handle signature
       if opts[:add_aws_auth_headers]
-       aws_headers = auth_headers(http_method, request.path, request.body)
+       aws_headers = auth_headers(http_method, [request.path, request.params.to_query].join("?"), request.body)
        request.headers = aws_headers.merge(request.headers || {})
       end
       request
