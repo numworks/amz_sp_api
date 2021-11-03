@@ -21,8 +21,9 @@ module AmzSpApi
 
       # Handle signature
       if opts[:add_aws_auth_headers]
-       aws_headers = auth_headers(http_method, [request.base_url, request.options[:params].to_query].join("?"), request.try(:body))
-       request.options[:headers] = aws_headers.merge(request.options[:headers] || {})
+        restricted_data_token = opts[:restricted_data_token]
+        aws_headers = auth_headers(http_method, [request.base_url, request.options[:params].to_query].join("?"), request.try(:body), restricted_data_token)
+        request.options[:headers] = aws_headers.merge(request.options[:headers] || {})
       end
       request
     end
@@ -82,9 +83,9 @@ module AmzSpApi
       signer.sign_request(http_method: http_method.to_s, url: url, body: body).headers
     end
 
-    def auth_headers(http_method, url, body)
+    def auth_headers(http_method, url, body, restricted_data_token)
       signed_request_headers(http_method, url, body).merge({
-        'x-amz-access-token' => retrieve_lwa_access_token
+        'x-amz-access-token' => restricted_data_token || retrieve_lwa_access_token
       })
     end
   end
