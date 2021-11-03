@@ -6,14 +6,46 @@ require 'api_client'
 module AmzSpApi
   class SpApiClient < ApiClient
 
+    ERROR_CODE_TOO_MANY_REQUESTS = 429
+    MAX_CONSECUTIVE_TOO_MANY_REQUESTS = 5
+
     def initialize(config = SpConfiguration.default)
       super(config)
+      @@quota_sleep = {}
+      @@consecutive_failed_request = 0
+    end
+
+    def self.quotas
+      @@quota_sleep
+    end
+
+    def self.consecutive_failures
+      @@consecutive_failed_request
+    end
+
+    def self.set_consecutive_failures(value)
+      @@consecutive_failed_request = value
     end
 
     alias_method :super_call_api, :call_api
     def call_api(http_method, path, opts = {})
       signed_opts = opts.merge(:add_aws_auth_headers => true)
-      super(http_method, path, signed_opts)
+      begin
+        result = super(http_method, path, signed_opts)
+        previous_value = @@quota_sleep[path.parameterize]
+        @@quota_sleep[path.parameterize] = result[2]["x-amzn-RateLimit-Limit"] || previous_value
+        @@consecutive_failed_request = 0
+        result
+      rescue AmzSpApi::ApiError => e
+        if SpApiClient.consecutive_failures < MAX_CONSECUTIVE_TOO_MANY_REQUESTS && e.code == ERROR_CODE_TOO_MANY_REQUESTS
+          SpApiClient.set_consecutive_failures(SpApiClient.consecutive_failures + 1)
+          sleep begin (1.0 / SpApiClient.quotas[path.parameterize]).ceil rescue 60 end
+          call_api(http_method, path, opts)
+        else
+          SpApiClient.set_consecutive_failures(0)
+          raise e
+        end
+      end
     end
 
     def build_request(http_method, path, opts = {})
