@@ -12,10 +12,19 @@ module AmzSpApi
 
     alias_method :super_call_api, :call_api
     def call_api(http_method, path, opts = {})
-      unsigned_request = build_request(http_method, path, opts)
-      aws_headers = auth_headers(http_method, unsigned_request.url, unsigned_request.encoded_body)
-      signed_opts = opts.merge(:header_params => aws_headers.merge(opts[:header_params] || {}))
+      signed_opts = opts.merge(:add_aws_auth_headers => true)
       super(http_method, path, signed_opts)
+    end
+
+    def build_request(http_method, path, request, opts = {})
+      request = super(http_method, path, request, opts)
+
+      # Handle signature
+      if opts[:add_aws_auth_headers]
+       aws_headers = auth_headers(http_method, [request.path, request.params.to_query].join("?"), request.body)
+       request.headers = aws_headers.merge(request.headers || {})
+      end
+      request
     end
 
     private
