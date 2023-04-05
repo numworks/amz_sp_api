@@ -1,0 +1,22 @@
+# AmzSpApi::FbaSmallAndLightApiModel::Error
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **code** | **String** | An error code that identifies the type of error that occurred. |  |
+| **message** | **String** | A message that describes the error condition in a human-readable form. |  |
+| **details** | **String** | Additional information that can help the caller understand or fix the issue. | [optional] |
+
+## Example
+
+```ruby
+require 'fba-small-and-light-api-model'
+
+instance = AmzSpApi::FbaSmallAndLightApiModel::Error.new(
+  code: null,
+  message: null,
+  details: null
+)
+```
+

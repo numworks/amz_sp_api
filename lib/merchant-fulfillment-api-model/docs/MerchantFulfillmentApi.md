@@ -1,0 +1,527 @@
+# AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi
+
+All URIs are relative to *https://sellingpartnerapi-na.amazon.com*
+
+| Method | HTTP request | Description |
+| ------ | ------------ | ----------- |
+| [**cancel_shipment**](MerchantFulfillmentApi.md#cancel_shipment) | **DELETE** /mfn/v0/shipments/{shipmentId} |  |
+| [**cancel_shipment_old**](MerchantFulfillmentApi.md#cancel_shipment_old) | **PUT** /mfn/v0/shipments/{shipmentId}/cancel |  |
+| [**create_shipment**](MerchantFulfillmentApi.md#create_shipment) | **POST** /mfn/v0/shipments |  |
+| [**get_additional_seller_inputs**](MerchantFulfillmentApi.md#get_additional_seller_inputs) | **POST** /mfn/v0/additionalSellerInputs |  |
+| [**get_additional_seller_inputs_old**](MerchantFulfillmentApi.md#get_additional_seller_inputs_old) | **POST** /mfn/v0/sellerInputs |  |
+| [**get_eligible_shipment_services**](MerchantFulfillmentApi.md#get_eligible_shipment_services) | **POST** /mfn/v0/eligibleShippingServices |  |
+| [**get_eligible_shipment_services_old**](MerchantFulfillmentApi.md#get_eligible_shipment_services_old) | **POST** /mfn/v0/eligibleServices |  |
+| [**get_shipment**](MerchantFulfillmentApi.md#get_shipment) | **GET** /mfn/v0/shipments/{shipmentId} |  |
+
+
+## cancel_shipment
+
+> <CancelShipmentResponse> cancel_shipment(shipment_id)
+
+
+
+Cancel the shipment indicated by the specified shipment identifier.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+
+### Examples
+
+```ruby
+require 'time'
+require 'merchant-fulfillment-api-model'
+
+api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
+shipment_id = 'shipment_id_example' # String | The Amazon-defined shipment identifier for the shipment to cancel.
+
+begin
+  
+  result = api_instance.cancel_shipment(shipment_id)
+  p result
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->cancel_shipment: #{e}"
+end
+```
+
+#### Using the cancel_shipment_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CancelShipmentResponse>, Integer, Hash)> cancel_shipment_with_http_info(shipment_id)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.cancel_shipment_with_http_info(shipment_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CancelShipmentResponse>
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->cancel_shipment_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **shipment_id** | **String** | The Amazon-defined shipment identifier for the shipment to cancel. |  |
+
+### Return type
+
+[**CancelShipmentResponse**](CancelShipmentResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## cancel_shipment_old
+
+> <CancelShipmentResponse> cancel_shipment_old(shipment_id)
+
+
+
+Cancel the shipment indicated by the specified shipment identifer.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+
+### Examples
+
+```ruby
+require 'time'
+require 'merchant-fulfillment-api-model'
+
+api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
+shipment_id = 'shipment_id_example' # String | The Amazon-defined shipment identifier for the shipment to cancel.
+
+begin
+  
+  result = api_instance.cancel_shipment_old(shipment_id)
+  p result
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->cancel_shipment_old: #{e}"
+end
+```
+
+#### Using the cancel_shipment_old_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CancelShipmentResponse>, Integer, Hash)> cancel_shipment_old_with_http_info(shipment_id)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.cancel_shipment_old_with_http_info(shipment_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CancelShipmentResponse>
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->cancel_shipment_old_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **shipment_id** | **String** | The Amazon-defined shipment identifier for the shipment to cancel. |  |
+
+### Return type
+
+[**CancelShipmentResponse**](CancelShipmentResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## create_shipment
+
+> <CreateShipmentResponse> create_shipment(body)
+
+
+
+Create a shipment with the information provided.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+
+### Examples
+
+```ruby
+require 'time'
+require 'merchant-fulfillment-api-model'
+
+api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
+body = AmzSpApi::MerchantFulfillmentApiModel::CreateShipmentRequest.new({shipment_request_details: AmzSpApi::MerchantFulfillmentApiModel::ShipmentRequestDetails.new({amazon_order_id: 'amazon_order_id_example', item_list: [AmzSpApi::MerchantFulfillmentApiModel::Item.new({order_item_id: 'order_item_id_example', quantity: 37})], ship_from_address: AmzSpApi::MerchantFulfillmentApiModel::Address.new({name: 'name_example', address_line1: 'address_line1_example', email: 'email_example', city: 'city_example', postal_code: 'postal_code_example', country_code: 'country_code_example', phone: 'phone_example'}), package_dimensions: AmzSpApi::MerchantFulfillmentApiModel::PackageDimensions.new, weight: AmzSpApi::MerchantFulfillmentApiModel::Weight.new({value: 3.56, unit: AmzSpApi::MerchantFulfillmentApiModel::UnitOfWeight::OZ}), shipping_service_options: AmzSpApi::MerchantFulfillmentApiModel::ShippingServiceOptions.new({delivery_experience: AmzSpApi::MerchantFulfillmentApiModel::DeliveryExperienceType::DELIVERY_CONFIRMATION_WITH_ADULT_SIGNATURE, carrier_will_pick_up: false})}), shipping_service_id: 'shipping_service_id_example'}) # CreateShipmentRequest | 
+
+begin
+  
+  result = api_instance.create_shipment(body)
+  p result
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->create_shipment: #{e}"
+end
+```
+
+#### Using the create_shipment_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<CreateShipmentResponse>, Integer, Hash)> create_shipment_with_http_info(body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.create_shipment_with_http_info(body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <CreateShipmentResponse>
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->create_shipment_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **body** | [**CreateShipmentRequest**](CreateShipmentRequest.md) |  |  |
+
+### Return type
+
+[**CreateShipmentResponse**](CreateShipmentResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## get_additional_seller_inputs
+
+> <GetAdditionalSellerInputsResponse> get_additional_seller_inputs(body)
+
+
+
+Gets a list of additional seller inputs required for a ship method. This is generally used for international shipping.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+
+### Examples
+
+```ruby
+require 'time'
+require 'merchant-fulfillment-api-model'
+
+api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
+body = AmzSpApi::MerchantFulfillmentApiModel::GetAdditionalSellerInputsRequest.new({shipping_service_id: 'shipping_service_id_example', ship_from_address: AmzSpApi::MerchantFulfillmentApiModel::Address.new({name: 'name_example', address_line1: 'address_line1_example', email: 'email_example', city: 'city_example', postal_code: 'postal_code_example', country_code: 'country_code_example', phone: 'phone_example'}), order_id: 'order_id_example'}) # GetAdditionalSellerInputsRequest | 
+
+begin
+  
+  result = api_instance.get_additional_seller_inputs(body)
+  p result
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->get_additional_seller_inputs: #{e}"
+end
+```
+
+#### Using the get_additional_seller_inputs_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetAdditionalSellerInputsResponse>, Integer, Hash)> get_additional_seller_inputs_with_http_info(body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_additional_seller_inputs_with_http_info(body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetAdditionalSellerInputsResponse>
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->get_additional_seller_inputs_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **body** | [**GetAdditionalSellerInputsRequest**](GetAdditionalSellerInputsRequest.md) |  |  |
+
+### Return type
+
+[**GetAdditionalSellerInputsResponse**](GetAdditionalSellerInputsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## get_additional_seller_inputs_old
+
+> <GetAdditionalSellerInputsResponse> get_additional_seller_inputs_old(body)
+
+
+
+Get a list of additional seller inputs required for a ship method. This is generally used for international shipping.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+
+### Examples
+
+```ruby
+require 'time'
+require 'merchant-fulfillment-api-model'
+
+api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
+body = AmzSpApi::MerchantFulfillmentApiModel::GetAdditionalSellerInputsRequest.new({shipping_service_id: 'shipping_service_id_example', ship_from_address: AmzSpApi::MerchantFulfillmentApiModel::Address.new({name: 'name_example', address_line1: 'address_line1_example', email: 'email_example', city: 'city_example', postal_code: 'postal_code_example', country_code: 'country_code_example', phone: 'phone_example'}), order_id: 'order_id_example'}) # GetAdditionalSellerInputsRequest | 
+
+begin
+  
+  result = api_instance.get_additional_seller_inputs_old(body)
+  p result
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->get_additional_seller_inputs_old: #{e}"
+end
+```
+
+#### Using the get_additional_seller_inputs_old_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetAdditionalSellerInputsResponse>, Integer, Hash)> get_additional_seller_inputs_old_with_http_info(body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_additional_seller_inputs_old_with_http_info(body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetAdditionalSellerInputsResponse>
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->get_additional_seller_inputs_old_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **body** | [**GetAdditionalSellerInputsRequest**](GetAdditionalSellerInputsRequest.md) |  |  |
+
+### Return type
+
+[**GetAdditionalSellerInputsResponse**](GetAdditionalSellerInputsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## get_eligible_shipment_services
+
+> <GetEligibleShipmentServicesResponse> get_eligible_shipment_services(body)
+
+
+
+Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 5 | 10 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+
+### Examples
+
+```ruby
+require 'time'
+require 'merchant-fulfillment-api-model'
+
+api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
+body = AmzSpApi::MerchantFulfillmentApiModel::GetEligibleShipmentServicesRequest.new({shipment_request_details: AmzSpApi::MerchantFulfillmentApiModel::ShipmentRequestDetails.new({amazon_order_id: 'amazon_order_id_example', item_list: [AmzSpApi::MerchantFulfillmentApiModel::Item.new({order_item_id: 'order_item_id_example', quantity: 37})], ship_from_address: AmzSpApi::MerchantFulfillmentApiModel::Address.new({name: 'name_example', address_line1: 'address_line1_example', email: 'email_example', city: 'city_example', postal_code: 'postal_code_example', country_code: 'country_code_example', phone: 'phone_example'}), package_dimensions: AmzSpApi::MerchantFulfillmentApiModel::PackageDimensions.new, weight: AmzSpApi::MerchantFulfillmentApiModel::Weight.new({value: 3.56, unit: AmzSpApi::MerchantFulfillmentApiModel::UnitOfWeight::OZ}), shipping_service_options: AmzSpApi::MerchantFulfillmentApiModel::ShippingServiceOptions.new({delivery_experience: AmzSpApi::MerchantFulfillmentApiModel::DeliveryExperienceType::DELIVERY_CONFIRMATION_WITH_ADULT_SIGNATURE, carrier_will_pick_up: false})})}) # GetEligibleShipmentServicesRequest | 
+
+begin
+  
+  result = api_instance.get_eligible_shipment_services(body)
+  p result
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->get_eligible_shipment_services: #{e}"
+end
+```
+
+#### Using the get_eligible_shipment_services_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetEligibleShipmentServicesResponse>, Integer, Hash)> get_eligible_shipment_services_with_http_info(body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_eligible_shipment_services_with_http_info(body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetEligibleShipmentServicesResponse>
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->get_eligible_shipment_services_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **body** | [**GetEligibleShipmentServicesRequest**](GetEligibleShipmentServicesRequest.md) |  |  |
+
+### Return type
+
+[**GetEligibleShipmentServicesResponse**](GetEligibleShipmentServicesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## get_eligible_shipment_services_old
+
+> <GetEligibleShipmentServicesResponse> get_eligible_shipment_services_old(body)
+
+
+
+Returns a list of shipping service offers that satisfy the specified shipment request details.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+
+### Examples
+
+```ruby
+require 'time'
+require 'merchant-fulfillment-api-model'
+
+api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
+body = AmzSpApi::MerchantFulfillmentApiModel::GetEligibleShipmentServicesRequest.new({shipment_request_details: AmzSpApi::MerchantFulfillmentApiModel::ShipmentRequestDetails.new({amazon_order_id: 'amazon_order_id_example', item_list: [AmzSpApi::MerchantFulfillmentApiModel::Item.new({order_item_id: 'order_item_id_example', quantity: 37})], ship_from_address: AmzSpApi::MerchantFulfillmentApiModel::Address.new({name: 'name_example', address_line1: 'address_line1_example', email: 'email_example', city: 'city_example', postal_code: 'postal_code_example', country_code: 'country_code_example', phone: 'phone_example'}), package_dimensions: AmzSpApi::MerchantFulfillmentApiModel::PackageDimensions.new, weight: AmzSpApi::MerchantFulfillmentApiModel::Weight.new({value: 3.56, unit: AmzSpApi::MerchantFulfillmentApiModel::UnitOfWeight::OZ}), shipping_service_options: AmzSpApi::MerchantFulfillmentApiModel::ShippingServiceOptions.new({delivery_experience: AmzSpApi::MerchantFulfillmentApiModel::DeliveryExperienceType::DELIVERY_CONFIRMATION_WITH_ADULT_SIGNATURE, carrier_will_pick_up: false})})}) # GetEligibleShipmentServicesRequest | 
+
+begin
+  
+  result = api_instance.get_eligible_shipment_services_old(body)
+  p result
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->get_eligible_shipment_services_old: #{e}"
+end
+```
+
+#### Using the get_eligible_shipment_services_old_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetEligibleShipmentServicesResponse>, Integer, Hash)> get_eligible_shipment_services_old_with_http_info(body)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_eligible_shipment_services_old_with_http_info(body)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetEligibleShipmentServicesResponse>
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->get_eligible_shipment_services_old_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **body** | [**GetEligibleShipmentServicesRequest**](GetEligibleShipmentServicesRequest.md) |  |  |
+
+### Return type
+
+[**GetEligibleShipmentServicesResponse**](GetEligibleShipmentServicesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## get_shipment
+
+> <GetShipmentResponse> get_shipment(shipment_id)
+
+
+
+Returns the shipment information for an existing shipment.  **Usage Plan:**  | Rate (requests per second) | Burst | | ---- | ---- | | 1 | 1 |  The `x-amzn-RateLimit-Limit` response header returns the usage plan rate limits that were applied to the requested operation, when available. The table above indicates the default rate and burst values for this operation. Selling partners whose business demands require higher throughput may see higher rate and burst values than those shown here. For more information, see [Usage Plans and Rate Limits in the Selling Partner API](https://developer-docs.amazon.com/sp-api/docs/usage-plans-and-rate-limits-in-the-sp-api).
+
+### Examples
+
+```ruby
+require 'time'
+require 'merchant-fulfillment-api-model'
+
+api_instance = AmzSpApi::MerchantFulfillmentApiModel::MerchantFulfillmentApi.new
+shipment_id = 'shipment_id_example' # String | The Amazon-defined shipment identifier for the shipment.
+
+begin
+  
+  result = api_instance.get_shipment(shipment_id)
+  p result
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->get_shipment: #{e}"
+end
+```
+
+#### Using the get_shipment_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<GetShipmentResponse>, Integer, Hash)> get_shipment_with_http_info(shipment_id)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.get_shipment_with_http_info(shipment_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <GetShipmentResponse>
+rescue AmzSpApi::MerchantFulfillmentApiModel::ApiError => e
+  puts "Error when calling MerchantFulfillmentApi->get_shipment_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **shipment_id** | **String** | The Amazon-defined shipment identifier for the shipment. |  |
+
+### Return type
+
+[**GetShipmentResponse**](GetShipmentResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
