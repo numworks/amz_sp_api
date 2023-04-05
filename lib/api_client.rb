@@ -182,7 +182,7 @@ module AmzSpApi
         basic_auth(conn)
         config.configure_middleware(conn)
         yield(conn) if block_given?
-        conn.adapter(Faraday.default_adapter)
+        conn.adapter(:excon)
         config.configure_connection(conn)
       end
     end
