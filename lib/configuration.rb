@@ -204,7 +204,8 @@ module AmzSpApi
 
     # Returns base URL for specified operation based on server settings
     def base_url(operation = nil)
-      index = server_operation_index.fetch(operation, server_index)
+      # WARNING: the code here has been changed by NumWorks
+      index = server_operation_index.fetch(operation, nil)
       return "#{scheme}://#{[host, base_path].join('/').gsub(/\/+/, '/')}".sub(/\/+\z/, '') if index == nil
 
       server_url(index, server_operation_variables.fetch(operation, server_variables), operation_server_settings[operation])
