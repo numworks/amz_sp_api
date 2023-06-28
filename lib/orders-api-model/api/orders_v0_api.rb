@@ -445,7 +445,8 @@ module AmzSpApi::OrdersApiModel
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => return_type)
+        :return_type => return_type,
+        :restricted_data_token => opts[:restricted_data_token])
 
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: OrdersV0Api#get_orders\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
